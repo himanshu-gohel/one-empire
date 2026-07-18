@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --color-brand-blue: #1d4ed8;
+  --color-brand-blue-hover: #1e40af;
+  --color-brand-gold: #fbbf24;
+  --color-brand-orange: #e67e00;
+  --color-brand-dark: #000000;
+  --color-brand-light: #f8fafc;
+
+  --animate-drift-slow: drift-slow 15s ease-in-out infinite;
+  --animate-drift-slower: drift-slower 20s ease-in-out infinite;
+
+  @keyframes drift-slow {
+    0%, 100% {
+      transform: translate(0, 0) scale(1);
+    }
+    50% {
+      transform: translate(40px, -30px) scale(1.1);
+    }
+  }
+  @keyframes drift-slower {
+    0%, 100% {
+      transform: translate(0, 0) scale(1.1);
+    }
+    50% {
+      transform: translate(-30px, 40px) scale(0.95);
+    }
+  }
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Custom selection highlight */
+::selection {
+  background-color: rgba(251, 191, 36, 0.35); /* brand-gold at 35% opacity */
+}
+
+/* Glassmorphism utility */
+.liquid-glass {
+  background: rgba(0, 0, 0, 0.4);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.1) 20%,
+    rgba(255,255,255,0) 40%, rgba(255,255,255,0) 60%,
+    rgba(255,255,255,0.1) 80%, rgba(255,255,255,0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Glass panel light theme variant */
+.liquid-glass-light {
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+.liquid-glass-light::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.03) 20%,
+    rgba(0,0,0,0) 40%, rgba(0,0,0,0) 60%,
+    rgba(0,0,0,0.03) 80%, rgba(0,0,0,0.1) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e1e1e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
