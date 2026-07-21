@@ -1266,67 +1266,159 @@ export default function Home() {
       </section>
 
       {/* 9. FOOTER (LIGHT THEME - WHITE BACKGROUND) */}
-      <footer className="bg-white border-t border-slate-200 py-16 text-slate-600">
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-8 mb-16">
-          <div className="lg:col-span-5 flex flex-col items-start gap-4">
-            <a href="#" className="flex items-center">
-              <div className="relative w-32 h-14">
-                <Image
-                  src="/logo.png"
-                  alt="One Empire Logo"
-                  fill
-                  style={{ objectFit: "contain" }}
-                />
+      <footer className="bg-white border-t border-slate-200 pt-16 pb-12 text-slate-600">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16">
+          {/* Top Row: Logo, Brand Info & Quick Links */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12 pb-10 border-b border-slate-100">
+            <div className="md:col-span-8 flex flex-col items-start gap-3">
+              <a href="#" className="flex items-center">
+                <div className="relative w-36 h-12">
+                  <Image
+                    src="/logo.png"
+                    alt="One Empire Logo"
+                    fill
+                    style={{ objectFit: "contain" }}
+                  />
+                </div>
+              </a>
+              <p className="text-sm leading-relaxed max-w-lg font-light text-slate-500">
+                Building Real Assets. Creating Real Wealth. Join thousands of smart people transforming their financial future.
+              </p>
+            </div>
+
+            <div className="md:col-span-4 flex flex-col md:items-end gap-3">
+              <h3 className="text-slate-900 text-xs font-bold tracking-widest uppercase">Quick Navigation</h3>
+              <div className="flex items-center gap-6 text-sm font-medium text-slate-600">
+                <a href="#why-choose" className="hover:text-emerald-600 transition-colors">Why Choose Us</a>
+                <a href="#plans" className="hover:text-emerald-600 transition-colors">Our Plans</a>
+                <a href="#community" className="hover:text-emerald-600 transition-colors">Community</a>
               </div>
-            </a>
-            <p className="text-sm leading-relaxed max-w-sm font-light text-slate-500">
-              Building Real Assets. Creating Real Wealth. Join thousands of smart people transforming their financial future.
-            </p>
+            </div>
           </div>
 
-          <div className="lg:col-span-3 flex flex-col gap-4">
-            <h3 className="text-slate-900 text-sm font-semibold tracking-wide uppercase">Quick Links</h3>
-            <ul className="flex flex-col gap-3 text-sm font-light">
-              <li>
-                <a href="#why-choose" className="hover:text-black transition-colors text-slate-500">Why Choose Us</a>
-              </li>
-              <li>
-                <a href="#plans" className="hover:text-black transition-colors text-slate-500">Our Plans</a>
-              </li>
-              <li>
-                <a href="#community" className="hover:text-black transition-colors text-slate-500">Community</a>
-              </li>
-            </ul>
-          </div>
+          {/* Middle Section: Our Global Offices Cards (Full Width 3 Columns) */}
+          <div className="mb-12">
+            <div className="flex items-center justify-between mb-6">
+              <h3 className="text-slate-900 text-xs font-bold tracking-widest uppercase flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block animate-pulse"></span>
+                Our Global Offices
+              </h3>
+              <span className="text-xs font-medium text-slate-400">3 Locations Worldwide</span>
+            </div>
 
-          <div className="lg:col-span-4 flex flex-col gap-4">
-            <h3 className="text-slate-900 text-sm font-semibold tracking-wide uppercase">Contact Us</h3>
-            <div className="flex flex-col gap-4 text-sm font-light leading-relaxed text-slate-500">
-              <div>
-                <span className="font-semibold text-slate-800 block text-xs mb-1 uppercase tracking-wider">Office Address</span>
-                9 Eastcheap, Letchworth Garden City, Hertfordshire, SG6 3DG, United Kingdom
-              </div>
-              <div>
-                <span className="font-semibold text-emerald-600 block text-xs mb-1 uppercase tracking-wider">WhatsApp Support</span>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {/* Dubai Office */}
+              <div className="group relative p-5 bg-slate-50/80 hover:bg-white border border-slate-200/80 hover:border-slate-300 rounded-2xl flex flex-col justify-between transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-1 overflow-hidden">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="w-8 h-8 rounded-xl bg-amber-500/10 text-amber-600 flex items-center justify-center shrink-0">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-bold text-slate-900 text-base tracking-tight truncate">Dubai</span>
+                    </div>
+                    <span className="shrink-0 px-2.5 py-1 text-[11px] font-semibold text-amber-700 bg-amber-50 border border-amber-200/70 rounded-full">
+                      🇦🇪 UAE
+                    </span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed mb-5 font-normal">
+                    1104, 11th Floor, The Tower Plaza Hotel, Sheikh Zayed Road, Dubai, UAE
+                  </p>
+                </div>
                 <a
-                  href="https://wa.me/447537166377"
+                  href="https://www.google.com/maps/search/?api=1&query=Dubai%2C+1104%2C+11th+Floor%2C+The+Tower+Plaza+Hotel%2C+Sheikh+Zayed+Road%2C+Dubai%2C+UAE"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-emerald-600 transition-colors font-medium text-slate-700"
+                  className="inline-flex items-center justify-between w-full py-2.5 px-4 bg-white hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 hover:border-slate-900 rounded-xl text-xs font-semibold transition-all duration-200 group/btn shadow-2xs"
                 >
-                  +44 7537 166377
+                  <span>View on Map</span>
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Manchester Office */}
+              <div className="group relative p-5 bg-slate-50/80 hover:bg-white border border-slate-200/80 hover:border-slate-300 rounded-2xl flex flex-col justify-between transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-1 overflow-hidden">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="w-8 h-8 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center shrink-0">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-bold text-slate-900 text-base tracking-tight truncate">Manchester</span>
+                    </div>
+                    <span className="shrink-0 px-2.5 py-1 text-[11px] font-semibold text-blue-700 bg-blue-50 border border-blue-200/70 rounded-full">
+                      🇬🇧 UK
+                    </span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed mb-5 font-normal">
+                    459-461, Cheetham Hill Road, M8 9PA, Manchester, UK
+                  </p>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Manchester%2C+459-461%2C+Cheetham+Hill+Road%2C+M8+9PA%2C+Manchester%2C+UK"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-between w-full py-2.5 px-4 bg-white hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 hover:border-slate-900 rounded-xl text-xs font-semibold transition-all duration-200 group/btn shadow-2xs"
+                >
+                  <span>View on Map</span>
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Casablanca Office */}
+              <div className="group relative p-5 bg-slate-50/80 hover:bg-white border border-slate-200/80 hover:border-slate-300 rounded-2xl flex flex-col justify-between transition-all duration-300 shadow-xs hover:shadow-md hover:-translate-y-1 overflow-hidden">
+                <div>
+                  <div className="flex items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2.5 min-w-0">
+                      <div className="w-8 h-8 rounded-xl bg-emerald-500/10 text-emerald-600 flex items-center justify-center shrink-0">
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                      </div>
+                      <span className="font-bold text-slate-900 text-base tracking-tight truncate">Casablanca</span>
+                    </div>
+                    <span className="shrink-0 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200/70 rounded-full">
+                      🇲🇦 Morocco
+                    </span>
+                  </div>
+                  <p className="text-slate-600 text-xs leading-relaxed mb-5 font-normal">
+                    2 Bis, Rue Abou Abdellah Nafii, Maarif, Casablanca 20100, Morocco
+                  </p>
+                </div>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Casablanca%2C+2+Bis%2C+Rue+Abou+Abdellah+Nafii%2C+Maarif%2C+Casablanca+20100%2C+Morocco"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-between w-full py-2.5 px-4 bg-white hover:bg-slate-900 text-slate-700 hover:text-white border border-slate-200 hover:border-slate-900 rounded-xl text-xs font-semibold transition-all duration-200 group/btn shadow-2xs"
+                >
+                  <span>View on Map</span>
+                  <svg className="w-4 h-4 transition-transform duration-200 group-hover/btn:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  </svg>
                 </a>
               </div>
             </div>
           </div>
-        </div>
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-16 pt-8 border-t border-slate-200 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-slate-400">
-          <p>&copy; 2026 One Empire Community. All rights reserved.</p>
-          <div className="flex items-center gap-6">
-            <a href="#" className="hover:text-black transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-black transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-black transition-colors">Cookie Policy</a>
+          {/* Bottom Copyright & Legal Links */}
+          <div className="pt-8 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs font-light text-slate-400">
+            <p>&copy; 2026 One Empire Community. All rights reserved.</p>
+            <div className="flex items-center gap-6">
+              <a href="#" className="hover:text-black transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-black transition-colors">Terms of Service</a>
+              <a href="#" className="hover:text-black transition-colors">Cookie Policy</a>
+            </div>
           </div>
         </div>
       </footer>
